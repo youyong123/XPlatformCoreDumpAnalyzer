@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>655</width>
-    <height>430</height>
+    <height>380</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -84,10 +84,10 @@
    <widget class="QComboBox" name="comboArchType">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>90</y>
       <width>77</width>
-      <height>30</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="focusPolicy">
@@ -123,7 +123,7 @@
    <widget class="QPushButton" name="bSysRootBrowse">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>130</y>
       <width>85</width>
       <height>27</height>
@@ -154,7 +154,7 @@
      <rect>
       <x>20</x>
       <y>180</y>
-      <width>91</width>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
@@ -165,7 +165,7 @@
    <widget class="QPushButton" name="bApplicationBrowser">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>170</y>
       <width>85</width>
       <height>27</height>
@@ -183,7 +183,7 @@
      <rect>
       <x>430</x>
       <y>170</y>
-      <width>91</width>
+      <width>101</width>
       <height>20</height>
      </rect>
     </property>
@@ -191,47 +191,11 @@
      <string>No File Selected</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lCoreFileCompressed">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>220</y>
-      <width>131</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Core-Compressed-Type</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboCompressedType">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>210</y>
-      <width>91</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
-    </property>
-    <item>
-     <property name="text">
-      <string>    NO</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>    lzo</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QLabel" name="lCoreFile">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>260</y>
+      <y>220</y>
       <width>121</width>
       <height>16</height>
      </rect>
@@ -243,8 +207,8 @@
    <widget class="QPushButton" name="lCoreFileBrowser">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>250</y>
+      <x>290</x>
+      <y>210</y>
       <width>85</width>
       <height>27</height>
      </rect>
@@ -260,7 +224,7 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>260</y>
+      <y>210</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -272,8 +236,8 @@
    <widget class="QPushButton" name="bgetBackTrace">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>340</y>
+      <x>160</x>
+      <y>280</y>
       <width>231</width>
       <height>27</height>
      </rect>
@@ -308,7 +272,6 @@
   <tabstop>comboArchType</tabstop>
   <tabstop>bSysRootBrowse</tabstop>
   <tabstop>bApplicationBrowser</tabstop>
-  <tabstop>comboCompressedType</tabstop>
   <tabstop>lCoreFileBrowser</tabstop>
   <tabstop>bgetBackTrace</tabstop>
  </tabstops>

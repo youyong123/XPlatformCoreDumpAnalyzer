@@ -6,6 +6,8 @@
 
 QT       += core gui
 
+QMAKE_MAC_SDK = macosx10.9
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = XPlatformCoreDump
@@ -18,3 +20,6 @@ SOURCES += main.cpp\
 HEADERS  += coredumputilframe.h
 
 FORMS    += coredumputilframe.ui
+
+RESOURCES += \
+    logo.qrc
