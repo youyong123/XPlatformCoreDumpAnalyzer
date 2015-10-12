@@ -59,7 +59,11 @@ Never use print directly instead use dbgLog function. In the release build, we c
 Desire - To use python in object oriented fashion. 
 
 
+####################################
 
+The GIT Tutorial to modify the files in this project are available in the file -
+
+gitReadme.txt
 
 
 
