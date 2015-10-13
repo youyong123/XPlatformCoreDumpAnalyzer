@@ -98,12 +98,12 @@
     </property>
     <item>
      <property name="text">
-      <string>    X86</string>
+      <string>    MIPS</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>    MIPS</string>
+      <string>    X86</string>
      </property>
     </item>
    </widget>

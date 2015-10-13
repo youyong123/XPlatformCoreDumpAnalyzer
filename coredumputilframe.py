@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'coredumputilframe.ui'
 #
-# Created: Wed Sep 23 21:43:52 2015
-#      by: PyQt4 UI code generator 4.11.3
+# Created: Mon Oct 12 17:16:42 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -115,8 +115,8 @@ class Ui_coreDumpUtilFrame(object):
         self.lbanner.setText(_translate("coreDumpUtilFrame", "     Cross Platform CoreDump Analysis Utility", None))
         self.lArchitecture.setText(_translate("coreDumpUtilFrame", "  Architecture", None))
         self.comboArchType.setToolTip(_translate("coreDumpUtilFrame", "select the architecture", None))
-        self.comboArchType.setItemText(0, _translate("coreDumpUtilFrame", "    X86", None))
-        self.comboArchType.setItemText(1, _translate("coreDumpUtilFrame", "    MIPS", None))
+        self.comboArchType.setItemText(0, _translate("coreDumpUtilFrame", "    MIPS", None))
+        self.comboArchType.setItemText(1, _translate("coreDumpUtilFrame", "    X86", None))
         self.lSysRoot.setText(_translate("coreDumpUtilFrame", "SysRoot", None))
         self.bSysRootBrowse.setText(_translate("coreDumpUtilFrame", "Browse...", None))
         self.lSysRootFilePath.setText(_translate("coreDumpUtilFrame", "No File Selected", None))
