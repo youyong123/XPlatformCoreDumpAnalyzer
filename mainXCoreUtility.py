@@ -45,9 +45,9 @@ class CoreDumpAttrib:
          self. __coreFile = coreFile
 
       def validateGdbEnviron(self):
-         if( __sysRoot == 'NONE' or  __applicationExe == 'NONE' or  __coreFile == 'NONE')
+         if self.__sysRoot is 'NONE' or self.__applicationExe is 'NONE' or self.__coreFile is 'NONE':
            return false
-         else
+         else:
            return true
 
 
