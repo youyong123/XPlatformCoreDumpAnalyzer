@@ -2,6 +2,7 @@ import sys
 from PyQt4 import QtGui
 from coredumputilframe  import Ui_coreDumpUtilFrame
 from coredumpHelper  import FileDirHelper
+from coredumpHelper import LabelHelper
 
 class CoreDumpAttrib:
       __arch = 'MIPS'
@@ -43,6 +44,15 @@ class CoreDumpAttrib:
       def setCoreFile(self, coreFile):   
          self. __coreFile = coreFile
 
+      def validateGdbEnviron(self):
+         if( __sysRoot == 'NONE' or  __applicationExe == 'NONE' or  __coreFile == 'NONE')
+           return false
+         else
+           return true
+
+
+
+
    
 def dbgLog(msg):
     # while making the actual product, comment the below line and uncomment pass
@@ -69,7 +79,11 @@ class Main(QtGui.QMainWindow, Ui_coreDumpUtilFrame):
         sysRootDir = fileHelper.getDirPath("SysRootPath")
         self.coreAttrib.setSysRoot(sysRootDir)
         dbgLog (self.coreAttrib.getSysRoot())
-        #print getDirPath("GetSysRoot")
+        labelHandle = self.ui.lSysRootFilePath
+        labelHelper = LabelHelper()
+        ## This is to check if the string is empty or not
+        if sysRootDir:
+           labelHelper.setLabel(labelHandle,sysRootDir)
   
     def browseApplicationExe(self):
         dbgLog('browse Application Exe')
@@ -77,6 +91,12 @@ class Main(QtGui.QMainWindow, Ui_coreDumpUtilFrame):
         appPathName = fileHelper.getFilePath("Select the Executable")
         self.coreAttrib.setApplicationExe(appPathName)
         dbgLog (self.coreAttrib.getApplicationExe())
+        labelHandle = self.ui.lApplicationFilePath
+        labelHelper = LabelHelper()
+        ## This is to check if the string is empty or not
+        if appPathName:
+           labelHelper.setLabel(labelHandle,appPathName)
+  
 
     def browseCoreFile(self):
        dbgLog('browse core file')
@@ -84,8 +104,14 @@ class Main(QtGui.QMainWindow, Ui_coreDumpUtilFrame):
        corePathName = fileHelper.getFilePath("Select the CoreFile")
        self.coreAttrib.setCoreFile(corePathName)
        dbgLog (self.coreAttrib.getCoreFile())
+       labelHandle = self.ui.lCorefileBrowser
+       labelHelper = LabelHelper()
+       ## This is to check if the string is empty or not
+       if  corePathName:
+           labelHelper.setLabel(labelHandle,corePathName)
+  
 
-     
+   
     
     
 

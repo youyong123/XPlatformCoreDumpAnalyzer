@@ -1,4 +1,5 @@
 import sys
+import textwrap
 from PyQt4 import QtGui
 from coredumputilframe  import Ui_coreDumpUtilFrame
 
@@ -15,6 +16,12 @@ class FileDirHelper:
       def getFilePath(self,infoMsg):
          return QtGui.QFileDialog.getOpenFileName(None,infoMsg)
   
+class LabelHelper:
+      def setLabel(self, lHandle, labelText):
+          #print textwrap.fill(labelText,20)
+          lHandle.setText(labelText[0:30])
 
+
+          
 
 
