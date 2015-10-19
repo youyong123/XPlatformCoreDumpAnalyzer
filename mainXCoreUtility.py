@@ -1,8 +1,10 @@
 import sys
 from PyQt4 import QtGui
+from PyQt4.QtGui import QMessageBox
 from coredumputilframe  import Ui_coreDumpUtilFrame
 from coredumpHelper  import FileDirHelper
 from coredumpHelper import LabelHelper
+from  coreDumpWindow import TabbedTerminal
 
 class CoreDumpAttrib:
       __arch = 'MIPS'
@@ -45,11 +47,29 @@ class CoreDumpAttrib:
          self. __coreFile = coreFile
 
       def validateGdbEnviron(self):
-         if self.__sysRoot is 'NONE' or self.__applicationExe is 'NONE' or self.__coreFile is 'NONE':
-           return false
-         else:
-           return true
 
+         if self.__sysRoot is 'NONE':
+             msgBox = QMessageBox()
+             msgBox.setText('SysRoot PATH Missing..')
+             msgBox.setStandardButtons(QMessageBox.Ok)
+             ret = msgBox.exec_();
+             return False
+
+         if self.__applicationExe is 'NONE':
+             msgBox = QMessageBox()
+             msgBox.setText('Set the Application -binary Path..')
+             msgBox.setStandardButtons(QMessageBox.Ok)
+             ret = msgBox.exec_();
+             return False
+
+         if self.__coreFile is 'NONE':
+             msgBox = QMessageBox()
+             msgBox.setText('Set the Core File  Path..')
+             msgBox.setStandardButtons(QMessageBox.Ok)
+             ret = msgBox.exec_();
+             return False
+
+         return True
 
 
 
@@ -70,6 +90,7 @@ class Main(QtGui.QMainWindow, Ui_coreDumpUtilFrame):
        self.ui.bSysRootBrowse.clicked.connect(self.ButtonbrowseSysRoot)
        self.ui.bApplicationBrowser.clicked.connect(self.browseApplicationExe)
        self.ui.lCoreFileBrowser.clicked.connect(self.browseCoreFile)
+       self.ui.bgetBackTrace.clicked.connect(self.getbt)
   
  ## browse button event installer ########
   
@@ -109,15 +130,20 @@ class Main(QtGui.QMainWindow, Ui_coreDumpUtilFrame):
        ## This is to check if the string is empty or not
        if  corePathName:
            labelHelper.setLabel(labelHandle,corePathName)
-  
 
    
-    
-    
+    def getbt(self):
+        dbgLog('get bt')
+        if  self.coreAttrib.validateGdbEnviron() is True:
+            coredumpParams = []
+            coredumpParams.append(self.coreAttrib.getSysRoot())
+            coredumpParams.append(self.coreAttrib.getApplicationExe())
+            coredumpParams.append(self.coreAttrib.getCoreFile())
+            self.win = TabbedTerminal(coredumpParams)
+            self.win.show()
 
  #### browse button event installer completed ###########  
 
- 
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
