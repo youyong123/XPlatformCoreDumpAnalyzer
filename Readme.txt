@@ -66,7 +66,21 @@ The GIT Tutorial to modify the files in this project are available in the file -
 gitReadme.txt
 
 
+###############################################################################
 
+How to deploy this Application?
+
+Firstly, install pyinstaller - 
+
+In ubuntu, you can install pyinstaller with the help of pip
+
+sudo pip install PyInstaller
+
+Next, in order to deploy this product - do the following.
+
+#pyinstaller <mainPythonProgramScript> 
+
+This will create a build directory, which will have the entire required library and the program.
 
 
 
