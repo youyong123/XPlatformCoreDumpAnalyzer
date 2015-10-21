@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'coredumputilframe.ui'
 #
-# Created: Mon Oct 12 17:16:42 2015
+# Created: Thu Oct 22 09:57:00 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -84,6 +84,7 @@ class Ui_coreDumpUtilFrame(object):
         self.lCoreFileBrowser = QtGui.QPushButton(self.centralWidget)
         self.lCoreFileBrowser.setGeometry(QtCore.QRect(290, 210, 85, 27))
         self.lCoreFileBrowser.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.lCoreFileBrowser.setStatusTip(_fromUtf8(""))
         self.lCoreFileBrowser.setObjectName(_fromUtf8("lCoreFileBrowser"))
         self.lCorefileBrowser = QtGui.QLabel(self.centralWidget)
         self.lCorefileBrowser.setGeometry(QtCore.QRect(430, 210, 101, 16))
@@ -118,13 +119,17 @@ class Ui_coreDumpUtilFrame(object):
         self.comboArchType.setItemText(0, _translate("coreDumpUtilFrame", "    MIPS", None))
         self.comboArchType.setItemText(1, _translate("coreDumpUtilFrame", "    X86", None))
         self.lSysRoot.setText(_translate("coreDumpUtilFrame", "SysRoot", None))
+        self.bSysRootBrowse.setToolTip(_translate("coreDumpUtilFrame", "Give the Path of fileSystem  - fs in the path staging of the sandbox.", None))
         self.bSysRootBrowse.setText(_translate("coreDumpUtilFrame", "Browse...", None))
         self.lSysRootFilePath.setText(_translate("coreDumpUtilFrame", "No File Selected", None))
         self.lApplicationExe.setText(_translate("coreDumpUtilFrame", "Application-Exe", None))
+        self.bApplicationBrowser.setToolTip(_translate("coreDumpUtilFrame", "Select the Application - Exe . The main binary - process.", None))
         self.bApplicationBrowser.setText(_translate("coreDumpUtilFrame", "Browse...", None))
         self.lApplicationFilePath.setText(_translate("coreDumpUtilFrame", "No File Selected", None))
         self.lCoreFile.setText(_translate("coreDumpUtilFrame", "Core-file ", None))
+        self.lCoreFileBrowser.setToolTip(_translate("coreDumpUtilFrame", "Give the path of core file - this can be even compressed form like lzo.", None))
         self.lCoreFileBrowser.setText(_translate("coreDumpUtilFrame", "  Browse...", None))
         self.lCorefileBrowser.setText(_translate("coreDumpUtilFrame", "No File Selected", None))
+        self.bgetBackTrace.setToolTip(_translate("coreDumpUtilFrame", "This will get the back trace, the backtrace log is stored in bt.txt", None))
         self.bgetBackTrace.setText(_translate("coreDumpUtilFrame", "Get BackTrace", None))
 
