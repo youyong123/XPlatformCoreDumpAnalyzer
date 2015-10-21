@@ -132,6 +132,9 @@
     <property name="focusPolicy">
      <enum>Qt::TabFocus</enum>
     </property>
+    <property name="toolTip">
+     <string>Give the Path of fileSystem  - fs in the path staging of the sandbox.</string>
+    </property>
     <property name="text">
      <string>Browse...</string>
     </property>
@@ -173,6 +176,9 @@
     </property>
     <property name="focusPolicy">
      <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string>Select the Application - Exe . The main binary - process.</string>
     </property>
     <property name="text">
      <string>Browse...</string>
@@ -216,6 +222,12 @@
     <property name="focusPolicy">
      <enum>Qt::TabFocus</enum>
     </property>
+    <property name="toolTip">
+     <string>Give the path of core file - this can be even compressed form like lzo.</string>
+    </property>
+    <property name="statusTip">
+     <string/>
+    </property>
     <property name="text">
      <string>  Browse...</string>
     </property>
@@ -241,6 +253,9 @@
       <width>231</width>
       <height>27</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>This will get the back trace, the backtrace log is stored in bt.txt</string>
     </property>
     <property name="text">
      <string>Get BackTrace</string>

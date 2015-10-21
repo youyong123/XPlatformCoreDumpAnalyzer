@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
+from PyQt4.QtGui import QMessageBox
 
 from PyQt4.QtCore import QTimer
 from PyQt4.QtGui import QApplication, QTabWidget, QPushButton
@@ -57,6 +58,8 @@ class TabbedTerminal(QTabWidget):
            print "the core is lzo"
            call(["lzop", "-fd", filename, "-o","test.core"])
        
+        
+        term.send("rm -f bt.txt \n")
         gdbpath = str("/usr/bin/mips-csr3.0-gdb -x bt.txt") + str(" \n")  
         #gdbpath = str(self.gdbparams[0]) + "/usr/bin/gdb "
         print gdbpath
@@ -75,6 +78,12 @@ class TabbedTerminal(QTabWidget):
         term.send(corefilecmd)
         #term.send(cmd)
         term.send("bt full  \n")
+        msgBox = QMessageBox()
+        workingDir = os.getcwd() 
+        btMsg = str("Check the backtrace stored in bt.txt at ") + str(workingDir) 
+        msgBox.setText(btMsg)
+        msgBox.setStandardButtons(QMessageBox.Ok)
+        ret = msgBox.exec_();
         #self.term.send("ls -l ")
         #print (self.gdbparams[1])
         #term.send(self.gdbparams[0])
